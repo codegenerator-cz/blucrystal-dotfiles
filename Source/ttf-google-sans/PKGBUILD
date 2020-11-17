@@ -1,0 +1,42 @@
+# Maintainer: Dynakarp <dynacorp@protonmail.com>
+
+# Unfortunately, Google Sans cannot be distributed with this repository,
+# however, you may extract it from the bin file inside of this archive: https://dl.google.com/dl/edgedl/chromeos/recovery/chromeos_13421.73.0_eve_recovery_stable-channel_mp-v2.bin.zip
+# if you mount the bin file using kpartx, you can extract the fonts
+# from /usr/share/fonts/google-sans. Place them in the same directory as this PKGBUILD,
+# and make the package using makepkg as usual.
+
+pkgname=ttf-google-sans
+pkgver=1.27
+pkgrel=1
+pkgdesc='Google Sans is a geometric sans-serif typeface designed by Google for use as a corporate branding face.'
+arch=(any)
+license=(custom)
+url='https://fonts.google.com/specimen/Google+Sans'
+source=("GoogleSans-Regular-v${pkgver}.ttf"
+        "GoogleSans-Medium-v${pkgver}.ttf"
+        "GoogleSans-MediumItalic-v${pkgver}.ttf"
+        "GoogleSans-Italic-v${pkgver}.ttf"
+        "GoogleSans-Bold-v${pkgver}.ttf"
+        "GoogleSans-BoldItalic-v${pkgver}.ttf"
+        "license.txt"
+        )
+sha1sums=('d83343e647319770ffc2c1487ad3539fc4f26289'
+          '2a3c9db78900aa8831f798305d8b66e66c59e160'
+          '87658dbee2bcdeafc392afb75b782523c0ca0d63'
+          'a345a6488e1708da7827f97cc11371c699d95408'
+          'c95b15c50b75769e697d25f0f910daa9f34390bb'
+          '6139ee954cf01d3d0216bcf90f27f8a04ceac0a8'
+          'ab8e6485aa7f6f573647486846cb3125d9198be4')
+
+package() {
+  install -dm 755 "${pkgdir}/usr/share/fonts/google-sans"
+  install -m 644 GoogleSans-Regular-v${pkgver}.ttf "${pkgdir}/usr/share/fonts/google-sans/GoogleSans-Regular-v${pkgver}.ttf"
+  install -m 644 GoogleSans-Medium-v${pkgver}.ttf "${pkgdir}/usr/share/fonts/google-sans/GoogleSans-Medium-v${pkgver}.ttf"
+  install -m 644 GoogleSans-MediumItalic-v${pkgver}.ttf "${pkgdir}/usr/share/fonts/google-sans/GoogleSans-MediumItalic-v${pkgver}.ttf"
+  install -m 644 GoogleSans-Italic-v${pkgver}.ttf "${pkgdir}/usr/share/fonts/google-sans/GoogleSans-Italic-v${pkgver}.ttf"
+  install -m 644 GoogleSans-Bold-v${pkgver}.ttf "${pkgdir}/usr/share/fonts/google-sans/GoogleSans-Bold-v${pkgver}.ttf"
+  install -m 644 GoogleSans-BoldItalic-v${pkgver}.ttf "${pkgdir}/usr/share/fonts/google-sans/GoogleSans-BoldItalic-v${pkgver}.ttf"
+  install -Dm644 license.txt -t "$pkgdir/usr/share/licenses/$pkgname"
+}
+ 
