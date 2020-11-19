@@ -34,7 +34,7 @@ do
 end
 -- }}}
 
-awful.spawn.with_shell("/home/dyna/.config/awesome/autorun.sh")
+awful.spawn.with_shell("/home/codegenerator/.config/awesome/autorun.sh")
 
 client.connect_signal("manage", function (c)
 	--if c.floating then
@@ -45,7 +45,7 @@ client.connect_signal("manage", function (c)
 end)
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/dyna/.config/awesome/themes/default/theme.lua")
+beautiful.init("/home/codegenerator/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"

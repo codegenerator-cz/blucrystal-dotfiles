@@ -7,7 +7,7 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
-local themes_path = "/home/dyna/.config/awesome/themes/"
+local themes_path = "/home/codegenerator/.config/awesome/themes/"
 
 local theme = {}
 
